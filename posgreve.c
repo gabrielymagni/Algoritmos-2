@@ -54,6 +54,12 @@ void pilha_libera(Pilha* p){
     free(p);
 }
 
+void imprime_pilha(Pilha* p){
+    Lista* temp;
+    for(temp=p->topo; temp!=NULL; temp=temp->prox){
+        printf("Info: %d \n ", temp->info);
+}
+}
 
 int main (){
     Pilha* pilha;  //criei um ponteiro que aponta pro topo da minha pilha
@@ -61,16 +67,15 @@ int main (){
     push(pilha, 1);
     push(pilha, 2);
     push(pilha, 3);
+    imprime_pilha(pilha);
     printf("Topo da pilha: %d \n", pilha->topo->info);
 
     pop(pilha);
     printf("Topo da pilha: %d ", pilha->topo->info);
 
+
     return 0;
-
-
-
 }
 
-
+//filas: quem eu vou retirar da fila é o primeiro que eu inseri
 
