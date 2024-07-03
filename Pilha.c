@@ -1,4 +1,4 @@
-//pilha, o ultimo elemento inserido vai ser o primeiro retirado, não pode pegar o valor do meio
+//pilha, o ultimo elemento inserido vai ser o primeiro retirado, nÃ£o pode pegar o valor do meio
 //usado em compiladores
 // last in, first out LIFO
 //push empilha e pop desempilha
@@ -10,22 +10,22 @@ struct lista{
     int info; //valor
     struct lista* prox; //ponteiro prox para o elemento tipo lista
 };
-typedef struct lista Lista; //dessde modo posso chamar só a Lista
+typedef struct lista Lista; //dessde modo posso chamar sÃ³ a Lista
 
 struct pilha{
     int info;
-    struct lista* topo; //é um ponteiro do tipo lista
+    struct lista* topo; //Ã© um ponteiro do tipo lista
 };
 typedef struct pilha Pilha;
 
-//função que retorna um ponteiro do tipo pilha
+//funÃ§Ã£o que retorna um ponteiro do tipo pilha
 Pilha* cria (void){
-    Pilha* p = (Pilha*) malloc(sizeof(Pilha));//Pilha em Maiúsculo é o tipo
-    p->topo = NULL; //O VALOR DO MEU TOPO É NULO
+    Pilha* p = (Pilha*) malloc(sizeof(Pilha));//Pilha em MaiÃºsculo Ã© o tipo
+    p->topo = NULL; //O VALOR DO MEU TOPO Ã‰ NULO
     return p;
 }
-//novo é o endeeço de memoria que aponta para info e prox
-void push(Pilha* p, int v){// (elemento que é o topo da lista, valor que quero inserir)
+//novo Ã© o endeeÃ§o de memoria que aponta para info e prox
+void push(Pilha* p, int v){// (elemento que Ã© o topo da lista, valor que quero inserir)
     Lista* novo = (Lista*) malloc(sizeof(Lista));  //aloca a memoria para o tipo Lista
     novo->info = v;
     novo->prox = p->topo; //recebe o conteudo da pilha atual, o topo
@@ -45,7 +45,7 @@ void pop(Pilha* p){
 }
 
 void pilha_libera(Pilha* p){
-    Lista* aux = p-> topo; //todo o cnteudo é passado pro auxiliar
+    Lista* aux = p-> topo; //todo o cnteudo Ã© passado pro auxiliar
     while(aux != NULL){
         Lista* temp = aux->prox;
         free(aux);
@@ -77,5 +77,5 @@ int main (){
     return 0;
 }
 
-//filas: quem eu vou retirar da fila é o primeiro que eu inseri
+//filas: quem eu vou retirar da fila Ã© o primeiro que eu inseri
 
